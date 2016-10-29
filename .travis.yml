@@ -1,0 +1,14 @@
+language: go
+
+go:
+  - 1.7
+  - tip
+
+cache:
+  directories:
+    - $GOPATH/src
+    - $GOPATH/pkg
+
+install:
+  - go get github.com/asdine/storm
+  - go get github.com/jessevdk/go-flags
