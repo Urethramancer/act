@@ -1,4 +1,4 @@
-# act
+# act [![Build status](https://travis-ci.org/Urethramancer/act.svg)](https://travis-ci.org/Urethramancer/act)
 This is a command-line tool for TODO lists. Each action you add is sorted under whichever working path you're currently in.
 
 ##  Dependencies
