@@ -116,7 +116,7 @@ func main() {
 			act.ID, _ = strconv.Atoi(a)
 			err = db.DeleteStruct(&act)
 			if err == nil {
-				pr("Removed %s.", a)
+				pr("Removed #%s.", a)
 			} else {
 				pr("Unknown ID %s.", a)
 			}
@@ -135,7 +135,6 @@ func main() {
 				var act []Action
 				err = db.Find("PathID", path.ID, &act)
 				if err == nil {
-					pr("Deleting: %v", act)
 					for _, a := range act {
 						db.DeleteStruct(&a)
 					}
@@ -160,7 +159,7 @@ func main() {
 				act.Text = opts.Edit.Text
 				err = db.Update(&act)
 				check(err)
-				pr("Changed %s to %s", opts.Edit.Action, opts.Edit.Text)
+				pr("Changed #%s to %s", opts.Edit.Action, opts.Edit.Text)
 			}
 		}
 		return
