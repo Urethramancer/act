@@ -1,0 +1,7 @@
+{
+	"version": "0.2.0",
+	"isShellCommand": false,
+	"command": "./build"
+	"args": [],
+	"showOutput": "silent"
+}

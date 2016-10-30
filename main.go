@@ -69,7 +69,7 @@ func main() {
 	}
 
 	if opts.Ver.Run {
-		pr("%s %s", program, version)
+		pr("%s %s", program, Version)
 		return
 	}
 

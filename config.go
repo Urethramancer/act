@@ -7,8 +7,9 @@ import (
 
 const (
 	program = "act"
-	version = "0.1.1"
 )
+
+var Version = "undefined"
 
 var _cfgdir, _dbname string
 
