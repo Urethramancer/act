@@ -75,7 +75,10 @@ func main() {
 
 	// Add a new entry for the current path
 	if opts.Add.Run {
-		check(err)
+		if opts.Add.Action == "" {
+			pr("You need to specify an action string to add.")
+			return
+		}
 		var path Path
 		err = db.One("Name", pathname, &path)
 		if err == storm.ErrNotFound {
