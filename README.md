@@ -3,8 +3,8 @@ This is a command-line tool for TODO lists. Each action you add is sorted under 
 
 ##  Dependencies
 1. Go version 1.7 or later
-2. [Storm](github.com/asdine/storm)
-3. [go-flags](github.com/jessevdk/go-flags)
+2. [Storm](https://github.com/asdine/storm)
+3. [go-flags](https://github.com/jessevdk/go-flags)
 
 ## Platforms
 Tested on Linux and macOS. Prepared for various BSD-derivatives. Not yet ready for Windows.
