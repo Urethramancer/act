@@ -19,7 +19,7 @@ type Path struct {
 }
 
 type Action struct {
-	ID     int    `storm:"id"`
+	ID     int    `storm:"id,increment"`
 	Text   string `storm:"index,unique"`
 	PathID int    `storm:"index"`
 }
@@ -36,7 +36,8 @@ var opts struct {
 var db storm.DB
 
 func main() {
-	db, err := storm.Open(defaultDB(), storm.AutoIncrement())
+
+	db, err := storm.Open(defaultDB())
 	check(err)
 	defer db.Close()
 
