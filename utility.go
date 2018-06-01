@@ -15,8 +15,3 @@ func check(e error) {
 		os.Exit(2)
 	}
 }
-
-func exists(path string) bool {
-	_, err := os.Stat(path)
-	return err == nil
-}
