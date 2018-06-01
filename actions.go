@@ -8,10 +8,14 @@ import (
 	"github.com/Urethramancer/cross"
 )
 
+// Actions structure holds the actions for one directory.
 type Actions struct {
-	Counter      uint64            `json:"counter"`
-	LastModified time.Time         `json:"modified"`
-	List         map[string]string `json:"actions"`
+	// Counter is the number of the next entry to be added.
+	Counter uint64 `json:"counter"`
+	// LastModified is in local time.
+	LastModified time.Time `json:"modified"`
+	// List contains the actual actions.
+	List map[string]string `json:"actions"`
 }
 
 // LoadActions loads a JSON file representing an Actions structure.
