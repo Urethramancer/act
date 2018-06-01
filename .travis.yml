@@ -1,8 +1,7 @@
 language: go
 
 go:
-  - 1.7
-  - tip
+  - 1.10
 
 cache:
   directories:
@@ -10,5 +9,5 @@ cache:
     - $GOPATH/pkg
 
 install:
-  - go get github.com/asdine/storm
+  - go get github.com/Urethramancer/cross
   - go get github.com/jessevdk/go-flags
