@@ -15,7 +15,7 @@ type Actions struct {
 	// LastModified is in local time.
 	LastModified time.Time `json:"modified"`
 	// List contains the actual actions.
-	List map[string]string `json:"actions"`
+	List map[uint64]string `json:"actions"`
 }
 
 // LoadActions loads a JSON file representing an Actions structure.
@@ -25,7 +25,7 @@ func LoadActions(name string) (*Actions, error) {
 		act := Actions{
 			Counter:      1,
 			LastModified: time.Now().Local(),
-			List:         make(map[string]string),
+			List:         make(map[uint64]string),
 		}
 		err = SaveActions(name, &act)
 		return &act, err

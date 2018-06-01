@@ -29,8 +29,13 @@ func (ac *AllCmd) Execute(args []string) error {
 		name := strings.TrimSuffix(e, ".json")
 		pr("%s:", name)
 		var a []string
+		// We want all entries to have the colon aligned, so calculate a decent width.
+		s := fmt.Sprintf("%d", act.Counter)
+		w := len(s)
+		width := fmt.Sprintf("%d", w)
+		pr("Format: %s", width)
 		for k, v := range act.List {
-			s := fmt.Sprintf("%s: %s", k, v)
+			s := fmt.Sprintf("%"+width+"d: %s", k, v)
 			a = append(a, s)
 		}
 		sort.Strings(a)
