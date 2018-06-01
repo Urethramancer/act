@@ -6,16 +6,19 @@ import (
 	"os/exec"
 )
 
+// EditCmd tool command.
 type EditCmd struct {
 	Action string
 	Text   string
 	Editor bool `short:"e" long:"editor" description:"Use an editor instead of text entered as an argument."`
 }
 
+// Execute edit.
 func (ec *EditCmd) Execute(args []string) error {
 	return nil
 }
 
+// EditText opens the supplied string with the text editor in the EDITOR environment variable.
 func EditText(in string) string {
 	editor := os.Getenv("EDITOR")
 	if editor == "" {

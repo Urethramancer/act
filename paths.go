@@ -7,6 +7,7 @@ import (
 	"github.com/Urethramancer/cross"
 )
 
+// PathToFile takes a path and converts it to a usable file name.
 func PathToFile(path string) (string, error) {
 	reg, err := regexp.Compile("[^a-zA-Z0-9]+")
 	if err != nil {
@@ -19,6 +20,7 @@ func PathToFile(path string) (string, error) {
 	return res + ".json", nil
 }
 
+// AllPaths returns a list of all Actions files.
 func AllPaths() ([]string, error) {
 	var list []string
 	path := cross.ConfigPath()

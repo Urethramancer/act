@@ -14,6 +14,7 @@ type Actions struct {
 	List         map[string]string `json:"actions"`
 }
 
+// LoadActions loads a JSON file representing an Actions structure.
 func LoadActions(name string) (*Actions, error) {
 	var err error
 	if !cross.FileExists(name) {
@@ -36,6 +37,7 @@ func LoadActions(name string) (*Actions, error) {
 	return &act, err
 }
 
+// SaveActions saves a nicely formatted version of an Actions structure.
 func SaveActions(name string, act *Actions) error {
 	data, err := json.MarshalIndent(act, "", "\t")
 	if err != nil {

@@ -9,9 +9,11 @@ import (
 	"github.com/Urethramancer/cross"
 )
 
+// AllCmd tool command.
 type AllCmd struct {
 }
 
+// Execute all.
 func (ac *AllCmd) Execute(args []string) error {
 	list, err := AllPaths()
 	if err != nil {
