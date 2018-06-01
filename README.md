@@ -2,8 +2,8 @@
 This is a command-line tool for TODO lists. Each action you add is sorted under whichever working path you're currently in.
 
 ##  Dependencies
-1. Go version 1.7 or later
-2. [Storm](https://github.com/asdine/storm)
+1. Go (tested on version 1.10)
+2. [cross](https://github.com/Urethramancer/cross)
 3. [go-flags](https://github.com/jessevdk/go-flags)
 
 ## Platforms
@@ -37,7 +37,7 @@ $ act add Stop making useless TODO entries.
 Added entry #142.
 ```
 
-You can change an entry with the `change` command, or its alias `edit`:
+You can change an entry for the current path with the `change` command, or its alias `edit`:
 
 ```sh
 $ act change 135 Let somebody else eyeball the README.
@@ -50,7 +50,7 @@ If you specify the `-e` flag instead of text the current version of the entry sp
 $ act change 135 -e
 ```
 
-Entries can be removed by with `remove` or its aliases, `rem`, `delete` or `del`:
+Entries for the current path can be removed by with `remove` or its aliases, `rem`, `delete` or `del`:
 
 ```sh
 $ act rem 142
