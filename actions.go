@@ -20,7 +20,7 @@ func LoadActions(name string) (*Actions, error) {
 	if !cross.FileExists(name) {
 		act := Actions{
 			Counter:      1,
-			LastModified: time.Now(),
+			LastModified: time.Now().Local(),
 			List:         make(map[string]string),
 		}
 		err = SaveActions(name, &act)
