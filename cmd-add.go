@@ -23,6 +23,7 @@ func (ac *AddCmd) Execute(args []string) error {
 	act.Counter++
 	act.List[act.Counter] = ac.Action.Text
 	act.LastModified = time.Now().Local()
+	pr("Added entry #%d.", act.Counter)
 	act.Save()
 	return nil
 }
