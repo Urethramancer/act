@@ -33,7 +33,7 @@ func LoadActions(name string) (*Actions, error) {
 			LastModified: time.Now().Local(),
 			List:         make(map[uint64]string),
 		}
-		err = SaveActions(&act)
+		err = act.Save()
 		return &act, err
 	}
 
@@ -49,7 +49,7 @@ func LoadActions(name string) (*Actions, error) {
 }
 
 // SaveActions saves a nicely formatted version of an Actions structure.
-func SaveActions(act *Actions) error {
+func (act *Actions) Save() error {
 	data, err := json.MarshalIndent(act, "", "\t")
 	if err != nil {
 		return err

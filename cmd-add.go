@@ -23,6 +23,6 @@ func (ac *AddCmd) Execute(args []string) error {
 	act.Counter++
 	act.List[act.Counter] = ac.Action.Text[0]
 	act.LastModified = time.Now().Local()
-	SaveActions(act)
+	act.Save()
 	return nil
 }
