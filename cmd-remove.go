@@ -25,7 +25,7 @@ func (rc *RemoveCmd) Execute(args []string) error {
 			if x == false {
 				fmt.Printf(", %d", id)
 			} else {
-				fmt.Printf("Removed %d", id)
+				fmt.Printf("Removed #%d", id)
 				x = false
 			}
 		} else {
