@@ -5,7 +5,7 @@ import "fmt"
 // RemoveCmd tool command.
 type RemoveCmd struct {
 	Args struct {
-		IDs []uint64 `positional-arg-name:"ACTION" description:"Action to remove."`
+		IDs []uint64 `positional-arg-name:"ACTION" description:"ID of action to remove."`
 	} `positional-args:"yes"`
 }
 
