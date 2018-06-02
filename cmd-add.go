@@ -8,7 +8,7 @@ import (
 // AddCmd tool command.
 type AddCmd struct {
 	Action struct {
-		Text []string `positional-arg-name:"TEXT" description:"Action text in quotes."`
+		Text string `positional-arg-name:"TEXT" description:"Action text in quotes."`
 	} `positional-args:"yes"`
 }
 
@@ -21,7 +21,7 @@ func (ac *AddCmd) Execute(args []string) error {
 
 	act := loadCurrentOrFail()
 	act.Counter++
-	act.List[act.Counter] = ac.Action.Text[0]
+	act.List[act.Counter] = ac.Action.Text
 	act.LastModified = time.Now().Local()
 	act.Save()
 	return nil
