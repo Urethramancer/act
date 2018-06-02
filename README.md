@@ -33,15 +33,15 @@ $ act all
 Adding a new action is straight-forward:
 
 ```sh
-$ act add Stop making useless TODO entries.
+$ act add "Stop making useless TODO entries."
 Added entry #142.
 ```
 
 You can change an entry for the current path with the `change` command, or its alias `edit`:
 
 ```sh
-$ act change 135 Let somebody else eyeball the README.
-Changed #135 to Let somebody else eyeball the README.
+$ act change 135 "Let somebody else eyeball the README."
+Changed #135 to "Let somebody else eyeball the README."
 ```
 
 If you specify the `-e` flag instead of text the current version of the entry specified will open in an editor specified in the **EDITOR** environment variable instead:
