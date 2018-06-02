@@ -18,17 +18,12 @@ func main() {
 	}
 
 	if len(os.Args) == 1 {
-		cwd, err := os.Getwd()
-		check(err)
-		fname, err := PathToFile(cwd)
-		check(err)
-		act, err := LoadActions(fname)
-		check(err)
-
+		act := loadCurrentOrFail()
 		if len(act.List) == 0 {
 			pr("No actions for the current directory.")
 			return
 		}
+		act.PrintActions(false)
 		return
 	}
 
