@@ -21,7 +21,19 @@ func (ec *EditCmd) Execute(args []string) error {
 	}
 
 	act := loadCurrentOrFail()
-	pr("%s", act.filename)
+	change := false
+	for _, id := range ec.Args.IDs {
+		s := EditText(act.List[id])
+		if s != act.List[id] {
+			act.List[id] = s
+			change = true
+		}
+	}
+
+	if change {
+		return act.Save()
+	}
+
 	return nil
 }
 
