@@ -28,6 +28,7 @@ func main() {
 	}
 
 	if len(os.Args) == 2 && os.Args[1] == "-c" {
+		opts.Clean = true
 		act := loadCurrentOrFail()
 		if len(act.List) == 0 {
 			pr("No actions for the current directory.")
