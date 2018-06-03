@@ -58,7 +58,7 @@ func (act *Actions) Save() error {
 	return ioutil.WriteFile(act.filename, data, 0600)
 }
 
-func (act *Actions) PrintActions(indent bool) {
+func (act *Actions) PrintActions(indent, clean bool) {
 	if indent {
 		name := filepath.Base(act.filename)
 		name = strings.TrimSuffix(name, ".json")
@@ -71,7 +71,12 @@ func (act *Actions) PrintActions(indent bool) {
 	w := len(s)
 	width := fmt.Sprintf("%d", w)
 	for k, v := range act.List {
-		s := fmt.Sprintf("%"+width+"d: %s", k, v)
+		var s string
+		if clean {
+			s = fmt.Sprintf("- %s", v)
+		} else {
+			s = fmt.Sprintf("%"+width+"d: %s", k, v)
+		}
 		a = append(a, s)
 	}
 	sort.Strings(a)

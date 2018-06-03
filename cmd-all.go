@@ -7,8 +7,7 @@ import (
 )
 
 // AllCmd tool command.
-type AllCmd struct {
-}
+type AllCmd struct{}
 
 // Execute all.
 func (ac *AllCmd) Execute(args []string) error {
@@ -23,7 +22,7 @@ func (ac *AllCmd) Execute(args []string) error {
 		if err != nil {
 			return err
 		}
-		act.PrintActions(true)
+		act.PrintActions(true, opts.Clean)
 	}
 	return nil
 }

@@ -7,4 +7,6 @@ var opts struct {
 	Remove RemoveCmd  `command:"remove" description:"Remove one or more actions." alias:"rem" alias:"rm" alias:"delete" alias:"del"`
 	Clear  ClearCmd   `command:"clear" description:"Remove a path and its contents." alias:"clr"`
 	Edit   EditCmd    `command:"change" description:"Change the text of an entry." alias:"edit"`
+	Dot    DotCmd     `command:"." description:"Change the text of an entry."`
+	Clean  bool       `short:"c" description:"Clean output (no numbers)."`
 }
