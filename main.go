@@ -17,15 +17,5 @@ func main() {
 		os.Exit(2)
 	}
 
-	if len(os.Args) == 1 {
-		act := loadCurrentOrFail()
-		if len(act.List) == 0 {
-			pr("No actions for the current directory.")
-			return
-		}
-		act.PrintActions(false)
-		return
-	}
-
 	_, _ = flags.Parse(&opts)
 }
