@@ -8,13 +8,20 @@ import (
 
 // EditCmd tool command.
 type EditCmd struct {
-	Action string
-	Text   string
-	Editor bool `short:"e" long:"editor" description:"Use an editor instead of text entered as an argument."`
+	Args struct {
+		IDs []uint64 `positional-arg-name:"ACTION" description:"ID of action to edit."`
+	} `positional-args:"yes"`
 }
 
 // Execute edit.
 func (ec *EditCmd) Execute(args []string) error {
+	if len(ec.Args.IDs) == 0 {
+		pr("You need to specify one or more action IDs to edit.")
+		return nil
+	}
+
+	act := loadCurrentOrFail()
+	pr("%s", act.filename)
 	return nil
 }
 
